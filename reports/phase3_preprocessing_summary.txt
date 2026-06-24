@@ -1,0 +1,63 @@
+=== PHASE 3: PREPROCESSING SUMMARY ===
+
+Feature columns : 21
+  Numeric        : 15
+  Categorical    : 6
+Total rows       : 1579
+Train (raw)      : 1263
+Test  (raw)      : 316
+
+--- TRAIN class counts BEFORE SMOTE ---
+label
+ALL                 113
+AML                 100
+CLL                 113
+CML                  94
+Lymphoma             91
+Multiple Myeloma    104
+Normal              648
+
+--- TEST class counts BEFORE SMOTE ---
+label
+ALL                  28
+AML                  25
+CLL                  28
+CML                  24
+Lymphoma             23
+Multiple Myeloma     26
+Normal              162
+
+X_train_t shape (preprocessed, pre-SMOTE) : (1263, 31)
+X_test_t  shape (preprocessed)             : (316, 31)
+
+Train rows after SMOTE : 4536
+
+--- TRAIN class counts AFTER SMOTE ---
+ALL                 648
+AML                 648
+CLL                 648
+CML                 648
+Lymphoma            648
+Multiple Myeloma    648
+Normal              648
+
+--- TEST class counts AFTER SMOTE (must match BEFORE) ---
+ALL                  28
+AML                  25
+CLL                  28
+CML                  24
+Lymphoma             23
+Multiple Myeloma     26
+Normal              162
+
+Test set unchanged: True
+
+
+--- LABEL ENCODING ---
+  0 -> ALL
+  1 -> AML
+  2 -> CLL
+  3 -> CML
+  4 -> Lymphoma
+  5 -> Multiple Myeloma
+  6 -> Normal
