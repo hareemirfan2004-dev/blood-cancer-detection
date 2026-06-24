@@ -1,0 +1,76 @@
+=== PHASE 4: MODELING SUMMARY ===
+
+Training set : 4536 rows x 31 features (SMOTE-balanced)
+Test set     : 316 rows x 31 features (original dist.)
+CV strategy  : StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+--- CV LEADERBOARD (sorted by F1 Macro) ---
+                    CV Accuracy (mean) CV Accuracy (std) CV F1 Macro (mean) CV F1 Macro (std) CV Time (s)
+Random Forest                   0.9989            0.0007             0.9989            0.0007         2.7
+SVM (RBF)                       0.9982            0.0013             0.9982            0.0013         1.6
+MLP Neural Net                  0.9969            0.0029             0.9969            0.0029         1.4
+Logistic Regression             0.9956            0.0017             0.9956            0.0017         6.0
+Decision Tree                   0.9894            0.0039             0.9894            0.0039         3.6
+
+Best model : Random Forest
+Saved to   : models/best_model.pkl
+
+
+--- PER-CLASS F1 (OOF cross_val_predict on SMOTE training set) ---
+NOTE: High scores expected — synthetic CBC columns encode class by construction.
+
+=== Logistic Regression ===
+                  precision  recall  f1-score  support
+ALL                  1.0000  0.9985    0.9992    648.0
+AML                  1.0000  1.0000    1.0000    648.0
+CLL                  0.9985  1.0000    0.9992    648.0
+CML                  1.0000  0.9815    0.9907    648.0
+Lymphoma             0.9848  0.9969    0.9908    648.0
+Multiple Myeloma     0.9878  0.9969    0.9923    648.0
+Normal               0.9985  0.9954    0.9969    648.0
+macro avg            0.9956  0.9956    0.9956   4536.0
+
+=== Decision Tree ===
+                  precision  recall  f1-score  support
+ALL                  1.0000  0.9985    0.9992    648.0
+AML                  0.9969  0.9969    0.9969    648.0
+CLL                  0.9954  0.9969    0.9961    648.0
+CML                  0.9801  0.9861    0.9831    648.0
+Lymphoma             0.9771  0.9861    0.9816    648.0
+Multiple Myeloma     0.9798  0.9738    0.9768    648.0
+Normal               0.9969  0.9877    0.9922    648.0
+macro avg            0.9894  0.9894    0.9894   4536.0
+
+=== Random Forest ===
+                  precision  recall  f1-score  support
+ALL                  1.0000  1.0000    1.0000    648.0
+AML                  1.0000  1.0000    1.0000    648.0
+CLL                  0.9985  1.0000    0.9992    648.0
+CML                  1.0000  0.9969    0.9985    648.0
+Lymphoma             0.9969  0.9969    0.9969    648.0
+Multiple Myeloma     0.9969  0.9985    0.9977    648.0
+Normal               1.0000  1.0000    1.0000    648.0
+macro avg            0.9989  0.9989    0.9989   4536.0
+
+=== SVM (RBF) ===
+                  precision  recall  f1-score  support
+ALL                  1.0000  1.0000    1.0000    648.0
+AML                  1.0000  1.0000    1.0000    648.0
+CLL                  1.0000  1.0000    1.0000    648.0
+CML                  1.0000  0.9907    0.9953    648.0
+Lymphoma             0.9923  0.9985    0.9954    648.0
+Multiple Myeloma     0.9969  1.0000    0.9985    648.0
+Normal               0.9985  0.9985    0.9985    648.0
+macro avg            0.9982  0.9982    0.9982   4536.0
+
+=== MLP Neural Net ===
+                  precision  recall  f1-score  support
+ALL                  1.0000  1.0000    1.0000    648.0
+AML                  1.0000  1.0000    1.0000    648.0
+CLL                  1.0000  1.0000    1.0000    648.0
+CML                  1.0000  0.9892    0.9946    648.0
+Lymphoma             0.9863  0.9969    0.9916    648.0
+Multiple Myeloma     0.9923  1.0000    0.9962    648.0
+Normal               1.0000  0.9923    0.9961    648.0
+macro avg            0.9969  0.9969    0.9969   4536.0
+

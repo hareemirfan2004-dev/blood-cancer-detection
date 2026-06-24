@@ -1,0 +1,28 @@
+=== SMOTE PLACEMENT & LEAKAGE CHECK ===
+
+X_train shape (post-SMOTE) : (4536, 31)
+X_test  shape (original)   : (316, 31)
+
+TEST-SET CLASS COUNTS
+ALL                  28
+AML                  25
+CLL                  28
+CML                  24
+Lymphoma             23
+Multiple Myeloma     26
+Normal              162
+Total: 316
+
+SMOTE FIT ON TRAIN ONLY
+  Train rows == 4536 : True
+  Test  rows ==  316 : True
+
+COUNTS MATCH PRE-SMOTE SNAPSHOT
+  All match : True
+  ALL                  expected= 28  got= 28  OK=True
+  AML                  expected= 25  got= 25  OK=True
+  CLL                  expected= 28  got= 28  OK=True
+  CML                  expected= 24  got= 24  OK=True
+  Lymphoma             expected= 23  got= 23  OK=True
+  Multiple Myeloma     expected= 26  got= 26  OK=True
+  Normal               expected=162  got=162  OK=True

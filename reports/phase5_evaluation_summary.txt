@@ -1,0 +1,44 @@
+=== PHASE 5: EVALUATION SUMMARY ===
+Model      : Random Forest
+Test rows  : 316  (original imbalanced distribution)
+
+--- OVERALL METRICS ---
+Accuracy          : 0.9905
+F1 Macro          : 0.9826
+Precision Macro   : 0.9824
+Recall Macro      : 0.9831
+
+--- PER-CLASS REPORT ---
+                  precision    recall  f1-score   support
+
+             ALL       1.00      1.00      1.00        28
+             AML       1.00      1.00      1.00        25
+             CLL       1.00      1.00      1.00        28
+             CML       0.96      0.96      0.96        24
+        Lymphoma       0.96      1.00      0.98        23
+Multiple Myeloma       0.96      0.92      0.94        26
+          Normal       1.00      1.00      1.00       162
+
+        accuracy                           0.99       316
+       macro avg       0.98      0.98      0.98       316
+    weighted avg       0.99      0.99      0.99       316
+
+--- PER-CLASS SENSITIVITY & SPECIFICITY ---
+Class                 Sensitivity  Specificity
+----------------------------------------------
+ALL                        1.0000       1.0000
+AML                        1.0000       1.0000
+CLL                        1.0000       1.0000
+CML                        0.9583       0.9966
+Lymphoma                   1.0000       0.9966
+Multiple Myeloma           0.9231       0.9966
+Normal                     1.0000       1.0000
+
+--- MODEL COMPARISON ON TEST SET ---
+Model                    Accuracy   F1 Macro  F1 Weighted
+--------------------------------------------------------
+Random Forest              0.9905     0.9826       0.9904 <-- best
+Logistic Regression        0.9873     0.9768       0.9873
+SVM (RBF)                  0.9842     0.9757       0.9842
+MLP Neural Net             0.9810     0.9677       0.9810
+Decision Tree              0.9525     0.9167       0.9521
