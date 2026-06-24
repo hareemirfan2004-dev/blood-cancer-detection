@@ -1,0 +1,38 @@
+=== PHASE 6: SPARK MLLIB RESULTS ===
+
+Mode            : local[*] (all CPU cores)
+Spark version   : 3.5.6
+Pipeline stages : StringIndexer x6 + LabelIndexer + Imputer + VectorAssembler + StandardScaler + RandomForestClassifier
+numTrees        : 100   maxDepth : 10   seed : 42
+
+Train rows : 1310
+Test  rows : 269
+
+--- OVERALL METRICS ---
+Accuracy      : 0.9963
+F1 (macro)    : 0.9963
+F1 (weighted) : 0.9963
+
+--- PER-CLASS ACCURACY ---
+Label                 Support  Correct   Accuracy
+--------------------------------------------------
+Normal                    149      149     1.0000
+CLL                        24       24     1.0000
+CML                        23       23     1.0000
+Multiple Myeloma           20       19     0.9500
+ALL                        20       20     1.0000
+AML                        20       20     1.0000
+Lymphoma                   13       13     1.0000
+
+--- PRODUCTION ARCHITECTURE MAPPING ---
+Local step                  ->  Production equivalent
+SparkSession local[*]       ->  YARN ResourceManager + NodeManagers
+spark.read.csv (local path) ->  spark.read.csv (HDFS path)
+randomSplit                 ->  Pre-partitioned HDFS train/test dirs
+StringIndexer               ->  Fitted on full cluster dataset; saved to HDFS
+VectorAssembler             ->  Dense vectors shuffled across executors
+StandardScaler              ->  Mean/std broadcast to all executors
+RandomForestClassifier      ->  Trees built in parallel on YARN containers (data-local)
+model.transform             ->  Batch scoring job or Structured Streaming
+Spark SQL per-class query   ->  Hive metastore / QuickSight dashboard
+PipelineModel (local)       ->  model.write().save("hdfs://...") + MLflow tracking
