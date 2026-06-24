@@ -66,10 +66,25 @@ jupyter notebook
 
 ## Pipeline Phases
 
-| Phase | Notebook | Description |
-|-------|----------|-------------|
+| Phase | Notebook / File | Description |
+|-------|-----------------|-------------|
 | 1 | `01_eda.ipynb` | Exploratory data analysis |
 | 2 | `02_preprocessing.ipynb` | Cleaning, encoding, scaling, train/test split |
 | 3 | `03_modeling.ipynb` | Train 5 classifiers with cross-validation |
 | 4 | `04_evaluation.ipynb` | Metrics, confusion matrix, required course visuals |
 | 5 | `05_spark_pipeline.ipynb` | PySpark/MLlib replication of the pipeline |
+| 6 | `src/app.py` | Streamlit prediction app (Phase 7) |
+
+## Streamlit Prediction App (Phase 7)
+
+Runs a local web UI that accepts CBC inputs and returns the predicted cancer class plus a per-class probability bar chart.
+
+**Requirements:** models must already be trained and saved to `models/` (run notebooks 1–4 first).
+
+```bash
+# From the blood_cancer_detection/ directory, using the Python 3.11 venv:
+C:\Users\irfan\Desktop\my_workspace\venv311\Scripts\python.exe -m streamlit run src/app.py
+```
+
+The app opens automatically at `http://localhost:8501`.  
+All 21 input fields are pre-filled with Normal-class CBC reference values — click **Predict** without changing anything to verify the pipeline loads correctly.
