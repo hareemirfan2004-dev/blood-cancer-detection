@@ -83,6 +83,7 @@ Runs a local web UI that accepts CBC inputs and returns the predicted cancer cla
 
 ```bash
 # From the blood_cancer_detection/ directory, using the Python 3.11 venv:
-C:\Users\irfan\Desktop\my_workspace\venv311\Scripts\python.exe -m streamlit run src/app.py
+C:\Users\<your-username>\Desktop\<your-project-folder>\venv311\Scripts\python.exe -m streamlit run src/app.py
+Replace <your-username> with your Windows account name and <your-project-folder> with the folder where you cloned this project.
 ```  
 All 21 input fields are pre-filled with Normal-class CBC reference values — click **Predict** without changing anything to verify the pipeline loads correctly.
