@@ -68,11 +68,11 @@ jupyter notebook
 
 | Phase | Notebook / File | Description |
 |-------|-----------------|-------------|
-| 1 | `01_eda.ipynb` | Exploratory data analysis |
-| 2 | `02_preprocessing.ipynb` | Cleaning, encoding, scaling, train/test split |
-| 3 | `03_modeling.ipynb` | Train 5 classifiers with cross-validation |
-| 4 | `04_evaluation.ipynb` | Metrics, confusion matrix, required course visuals |
-| 5 | `05_spark_pipeline.ipynb` | PySpark/MLlib replication of the pipeline |
+| 1 | `notebooks/01_eda.ipynb` | Exploratory data analysis |
+| 2 | `notebooks/02_preprocessing.ipynb` | Cleaning, encoding, scaling, train/test split |
+| 3 | `notebooks/03_modeling.ipynb` | Train 5 classifiers with cross-validation |
+| 4 | `notebooks/04_evaluation.ipynb` | Metrics, confusion matrix, required course visuals |
+| 5 | `notebooks/05_spark_pipeline.ipynb` | PySpark/MLlib replication of the pipeline |
 | 6 | `src/app.py` | Streamlit prediction app (Phase 7) |
 
 ## Streamlit Prediction App
