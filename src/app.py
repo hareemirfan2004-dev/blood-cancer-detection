@@ -2,7 +2,6 @@
 Blood Cancer Detection — Streamlit Prediction App (Phase 7)
 Academic project. NOT a diagnostic tool.
 """
-import sys
 from pathlib import Path
 
 import joblib
