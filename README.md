@@ -1,7 +1,7 @@
 # Big Data-Driven Predictive Analytics for Early Blood Cancer Detection
 
 A supervised multi-class classification project for the Big Data Essentials course.
-Classifies patients into: **Normal / ALL / AML / CLL / CML** from clinical CBC data.
+Classifies patients into: **Normal / ALL / AML / CLL / CML / Lymphoma / Multiple Myeloma** from clinical CBC data.
 
 ---
 
