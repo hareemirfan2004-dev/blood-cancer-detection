@@ -56,7 +56,7 @@ blood_cancer_detection/
 ```bash
 pip install -r requirements.txt
 
-# 1. Download the Mendeley CSV and place it in data/
+# 1. Download the Mendeley CSV and place it in data/ as 'Blood Cancer Diseases dataset  - Sheet1.csv'
 # 2. Build the hybrid dataset:
 python build_hybrid_dataset.py
 
